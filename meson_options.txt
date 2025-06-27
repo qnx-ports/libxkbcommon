@@ -90,3 +90,9 @@ option(
     value: true,
     description: 'Enable installing bash completion scripts',
 )
+option(
+    'test_xkb_config_root', 
+    type: 'string', 
+    value: '/data/home/qnxuser/bin/test/data',
+    description: 'Set the test data path'
+)

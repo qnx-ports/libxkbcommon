@@ -679,8 +679,9 @@ test_env.set('HAVE_XKBCLI_INTERACTIVE_WAYLAND', configh_data.get('HAVE_XKBCLI_IN
 test_env.set('HAVE_XKBCLI_INTERACTIVE_X11', configh_data.get('HAVE_XKBCLI_INTERACTIVE_X11', 0).to_string())
 test_env.set('HAVE_XKBCLI_LIST', configh_data.get('HAVE_XKBCLI_LIST', 0).to_string())
 
+test_xkb_config_root = get_option('test_xkb_config_root')
 test_configh_data = configuration_data()
-test_configh_data.set_quoted('TEST_XKB_CONFIG_ROOT', meson.current_source_dir()/'test'/'data')
+test_configh_data.set_quoted('TEST_XKB_CONFIG_ROOT', test_xkb_config_root)
 configure_file(output: 'test-config.h', configuration: test_configh_data)
 
 m_dep = cc.find_library('m', required : false)
