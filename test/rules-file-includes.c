@@ -58,8 +58,11 @@ test_rules(struct xkb_context *ctx, struct test_data *data)
     };
     struct xkb_component_names kccgst;
 
-    fprintf(stderr, "\n\nChecking : %s\t%s\t%s\t%s\t%s\n", data->rules,
-            data->model, data->layout, data->variant, data->options);
+    fprintf(stderr, "\n\nChecking : %s\t%s\t%s\t%s\t%s\n",
+        strnull(data->rules), strnull(data->model),
+        strnull(data->layout), strnull(data->variant),
+        strnull(data->options));
+
 
     if (data->should_fail)
         fprintf(stderr, "Expecting: FAILURE\n");
